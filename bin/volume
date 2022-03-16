@@ -1,0 +1,11 @@
+#!/bin/sh
+
+case $1 in
+	"mute")		args="set-sink-mute @DEFAULT_SINK@ toggle";;
+	"raise")	args="set-sink-volume @DEFAULT_SINK@ +10%";;
+	"lower")	args="set-sink-volume @DEFAULT_SINK@ -10%";;
+	*)		echo "incorrect usage" && exit;;
+esac
+
+pactl $args && kill -45 $(pidof dwmblocks)
+

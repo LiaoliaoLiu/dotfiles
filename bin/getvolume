@@ -1,0 +1,7 @@
+#!/bin/bash
+
+output=$(echo ' ')
+
+volume=$(pamixer --get-volume)
+
+[[ -z $(pamixer --get-mute | grep "true") ]] && echo "$output$volume%" || echo " $volume%"

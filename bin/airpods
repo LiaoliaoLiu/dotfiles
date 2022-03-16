@@ -1,0 +1,11 @@
+#!/bin/sh
+
+status=$(bluetoothctl devices | cut -f2 -d' ' | while read uuid; do bluetoothctl info $uuid; done|grep -e "Connected" | awk -F ' ' '{print $2}')
+
+if [ "$status" = "no" ]
+then
+    bluetoothctl power on
+    bluetoothctl connect 14:60:CB:CE:D9:94
+else
+    bluetoothctl power off
+fi

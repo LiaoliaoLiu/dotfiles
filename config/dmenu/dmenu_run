@@ -1,0 +1,2 @@
+#!/bin/sh
+dmenu_path | grep -v -x -f /home/liaoliao/.config/dmenu/dmenu_exclude | dmenu "$@" | ${SHELL:-"/bin/sh"} &

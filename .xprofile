@@ -1,0 +1,10 @@
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
+# Wallpaper
+nitrogen --restore &
+
+# Loop
+while true; do
+	dwm > /dev/null 2>&1
+done

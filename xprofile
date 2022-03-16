@@ -1,0 +1,12 @@
+export GLFW_IM_MODULE=ibus kitty
+export GTK_IM_MODULE=fcitx5
+export QT_IM_MODULE=fcitx5
+export XMODIFIERS="@im=fcitx5"
+fcitx5 &
+# Wallpaper
+nitrogen --restore &
+
+# Loop
+while true; do
+	dwm > /dev/null 2>&1
+done
